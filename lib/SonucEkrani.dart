@@ -3,8 +3,9 @@ import 'package:sayi_tahmin_oyunu/main.dart';
 
 class SonucEkrani extends StatefulWidget {
   late bool sonuc;
+  late int rastgle;
 
-  SonucEkrani({required this.sonuc});
+  SonucEkrani({required this.sonuc, required this.rastgle});
 
   @override
   State<SonucEkrani> createState() => _SonucEkraniState();
@@ -21,16 +22,25 @@ class _SonucEkraniState extends State<SonucEkrani> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            widget.sonuc ? Image.asset("images/mutlu_resim.png") : Image.asset("images/uzgun_resim.png"),
-            Text(widget.sonuc ? "KAZANDIN!" : "KAYBETTİN!",
+            widget.sonuc
+                ? Image.asset("images/mutlu_resim.png")
+                : Image.asset("images/uzgun_resim.png"),
+            Text(
+              widget.sonuc ? "KAZANDIN!" : "KAYBETTİN!",
               style: TextStyle(
                 fontSize: 50.0,
                 fontWeight: FontWeight.bold,
-                 color: Colors.purple,
+                color: Colors.red,
               ),
             ),
+            Text("DOĞRU SAYI: ${widget.rastgle}",
+              style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 18.0,
+                  color: Colors.black),
+            ),
             ElevatedButton(
-                onPressed: (){
+                onPressed: () {
                   Navigator.pop(context);
                 },
                 child: Text("BAŞTAN BAŞLA")),

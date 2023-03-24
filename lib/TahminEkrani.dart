@@ -65,7 +65,7 @@ class _TahminEkraniState extends State<TahminEkrani> {
                   setState(() {
                     int tahmn = int.parse(tahmin.text);
                     if (tahmn == rastgelesayi){
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SonucEkrani(sonuc: true,)));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SonucEkrani(sonuc: true, rastgle: rastgelesayi,)));
                     }
                     else{
                       haklar -= 1;
@@ -77,7 +77,7 @@ class _TahminEkraniState extends State<TahminEkrani> {
                       }
                     }
                     if(haklar == 0){
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>  SonucEkrani(sonuc: false,)));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>  SonucEkrani(sonuc: false,rastgle: rastgelesayi,)));
                     }
                   });
                 },
