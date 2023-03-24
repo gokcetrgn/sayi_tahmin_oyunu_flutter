@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sayi_tahmin_oyunu/main.dart';
 
 class SonucEkrani extends StatefulWidget {
   const SonucEkrani({Key? key}) : super(key: key);
@@ -16,8 +17,21 @@ class _SonucEkraniState extends State<SonucEkrani> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            Image.asset("images/mutlu_resim.png"),
+            Text("KAZANDIN!",
+              style: TextStyle(
+                fontSize: 50.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+              ),
+            ),
+            ElevatedButton(
+                onPressed: (){
+                  Navigator.pop(context);
+                },
+                child: Text("BAŞTAN BAŞLA")),
           ],
         ),
       ),

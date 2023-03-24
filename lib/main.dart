@@ -16,18 +16,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: Anasayfa(
-        title: '',
-      ),
+      home: Anasayfa(),
     );
   }
 }
 
 class Anasayfa extends StatefulWidget {
-  const Anasayfa({super.key, required this.title});
-
-  final String title;
-
   @override
   State<Anasayfa> createState() => _AnasayfaState();
 }
