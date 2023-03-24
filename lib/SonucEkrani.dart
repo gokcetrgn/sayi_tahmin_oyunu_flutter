@@ -30,7 +30,7 @@ class _SonucEkraniState extends State<SonucEkrani> {
               style: TextStyle(
                 fontSize: 50.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.red,
+                color: widget.sonuc ?  Colors.green : Colors.red,
               ),
             ),
             Text("DOĞRU SAYI: ${widget.rastgle}",
