@@ -21,13 +21,33 @@ class _TahminEkraniState extends State<TahminEkrani> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            TextField(
-              decoration: InputDecoration(
-                hintText: "Sayı giriniz...",
-                border: OutlineInputBorder(),
-                labelText: 'Tahmin',
+            Text(
+              "Kalan Hak:",
+              style: TextStyle(
+                  fontSize: 40.0,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold),
+            ),Text(
+              "Yardım: ",
+              style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(
+                  hintText: "Sayı giriniz...",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  labelText: 'Tahmin',
+                ),
               ),
             ),
             ElevatedButton(
